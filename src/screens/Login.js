@@ -19,11 +19,12 @@ export default function Login() {
   async function handleLogin() {
     await api.postLogin(user).then(
       (response) => {
-        console.log(response.data.message);
-        Alert.alert(response.data.message);
+        //console.log(response.data.message);
+        Alert.alert("OK",response.data.message);
       },
       (error) => {
-        console.log(error);
+        Alert.alert('Erro',error.response.data.error);
+        //console.log(error);
       }
     );
   }
