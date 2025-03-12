@@ -89,6 +89,7 @@ export default function Cadastro({navigation}) {
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
+      backgroundColor: "#E69EC3",
     },
     title: {
       fontSize: 28,
