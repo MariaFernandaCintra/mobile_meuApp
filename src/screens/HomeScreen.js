@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import api from "../axios/axios";
 
+
 export default function Home({ navigation }) {
   return (
     <View style={styles.header}>

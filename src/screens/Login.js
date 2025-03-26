@@ -9,11 +9,14 @@ import {
   Button,
 } from "react-native";
 import api from "../axios/axios";
+import {Ionicons} from '@expo/vector-icons'
 
-export default function Login({ navigation }) {
+
+export default function Login({navigation}) {
   const [user, setUser] = useState({
     email: "",
     password: "",
+    showPassword:false
   });
 
   async function handleLogin() {
@@ -41,14 +44,19 @@ export default function Login({ navigation }) {
           setUser({ ...user, email: value });
         }}
       />
+      <View style={styles.passwordContainer}>
       <TextInput
-        style={styles.input}
+        style={styles.passwordInput}
         placeholder="Senha"
+        secureTextEntry={user.showPassword}
         value={user.password}
-        onChangeText={(value) => {
-          setUser({ ...user, password: value });
+        onChangeText={(value) => {setUser({...user,'password':value})
         }}
       />
+      <TouchableOpacity onPress={()=> setUser({...user,showPassword:!user.showPassword})}>
+            <Ionicons name={user.showPassword?"eye-off":"eye"} size={24} color='#D9007B'/>
+        </TouchableOpacity>
+      </View>
 
       <TouchableOpacity onPress={handleLogin} style={styles.button}>
         <Text>Entrar</Text>
@@ -85,4 +93,15 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     color: "black",
   },
+  passwordContainer:{
+    flexDirection:'row',
+    alignItems:'center',
+    width:"100%",
+    borderBottomWidth:1,
+    paddingRight:10,
+},
+passwordInput:{
+    flex:1,
+    height:'40',
+},
 });
