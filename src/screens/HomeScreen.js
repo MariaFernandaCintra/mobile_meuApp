@@ -13,6 +13,7 @@ import api from "../axios/axios";
 
 export default function Home({ navigation }) {
   return (
+    <View style={styles.container}>
     <View style={styles.header}>
        <Button
        title="Cadastrar Evento"
@@ -29,12 +30,17 @@ export default function Home({ navigation }) {
        onPress={() => navigation.navigate("Organizador")}
        />
     </View>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
 header:{
 
+},
+container:{
+  flex: 1,
+  backgroundColor: "#E69EC3",
 },
 button: {
 backgroundColor: "#AD4596",

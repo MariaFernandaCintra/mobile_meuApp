@@ -32,7 +32,7 @@ export default function Ingresso({ navigation }) {
   
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Faça o cadstro do Ingresso</Text>
+        <Text style={styles.title}>Faça o cadastro do Ingresso</Text>
         <TextInput
           style={styles.input}
           placeholder="Preço"
