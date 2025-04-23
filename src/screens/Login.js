@@ -24,13 +24,13 @@ export default function Login() {
   async function handleLogin() {
     await api.postLogin(user).then(
       (response) => {
-        //console.log(response.data.message);
+        console.log(response.data.message);
         Alert.alert("OK", response.data.message);
         navigation.navigate("Home");
       },
       (error) => {
         Alert.alert("Erro", error.response.data.error);
-        //console.log(error);
+        console.log(error);
       }
     );
   }
@@ -87,7 +87,9 @@ const styles = StyleSheet.create({
     height: 40,
     borderBottomWidth: 1,
     marginBottom: 20,
-    paddingHorizontal: 10,
+    paddingHorizontal: "100%",
+    alignItems: "center",
+    marginRight: 260,
   },
   button: {
     backgroundColor: "#AD4596",

@@ -21,7 +21,7 @@ export default function Layout({ children }) {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: "blue",
+    backgroundColor: "pink",
     width: "100%",
     height: 60,
     justifyContent: "center",
@@ -32,6 +32,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 20,
+    paddingHorizontal: 0,
   },
 });

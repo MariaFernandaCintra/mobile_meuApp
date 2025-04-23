@@ -29,6 +29,12 @@ export default function Home({ navigation }) {
        title="Cadastrar Organizador"
        onPress={() => navigation.navigate("Organizador")}
        />
+
+       <Button
+        style={styles.button}
+        title="Lista de Eventos"
+        onPress={() => navigation.navigate("EventosScreen")}
+       />
     </View>
     </View>
   )
