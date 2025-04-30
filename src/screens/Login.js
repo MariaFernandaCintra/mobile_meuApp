@@ -84,12 +84,10 @@ const styles = StyleSheet.create({
   },
   input: {
     width: "100%",
-    height: 40,
     borderBottomWidth: 1,
-    marginBottom: 20,
-    paddingHorizontal: "100%",
+    paddingRight: 10,
     alignItems: "center",
-    marginRight: 260,
+    flexDirection: 'row'
   },
   button: {
     backgroundColor: "#AD4596",
