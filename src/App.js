@@ -16,8 +16,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Cadastro" component={Cadastro} />
         <Stack.Screen name="Evento" component={Evento} />
         <Stack.Screen name="EventosScreen" component={EventosScreens} />
