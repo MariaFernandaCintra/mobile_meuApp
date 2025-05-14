@@ -9,6 +9,7 @@ import {
   Button,
 } from "react-native";
 import api from "../axios/axios";
+import DateTimePickerDefault from "../../components/DateTimePicker";
 
 export default function Evento({ navigation }) {
     const [evento, setEvento] = useState({
@@ -34,7 +35,7 @@ export default function Evento({ navigation }) {
   
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Faça o cadstro do Evento</Text>
+        <Text style={styles.title}>Faça o cadastro do Evento</Text>
         <TextInput
           style={styles.input}
           placeholder="nome"
@@ -51,13 +52,16 @@ export default function Evento({ navigation }) {
             setEvento({ ...evento, descricao: value });
           }}
         />
-        <TextInput
-          style={styles.input}
-          placeholder="Data e hora"
-          value={evento.data_hora}
-          onChangeText={(value) => {
-            setEvento({ ...evento, data_hora: value });
-          }}
+
+        <DateTimePickerDefault
+        type={'datetime'}
+        buttonTitle={
+          evento.data_hora === ""
+          ? "Selecione a data do evento"
+          : evento.data_hora.toLocaleString()
+        }
+        setValue={setEvento}
+        dateKey={"data_hora"}
         />
 
         <TextInput
@@ -97,11 +101,12 @@ export default function Evento({ navigation }) {
       fontWeight: "bold",
     },
     input: {
-      width: "100%",
+      width: "80%",
       height: 40,
       borderBottomWidth: 1,
       marginBottom: 20,
       paddingHorizontal: 10,
+      margin: 10,
     },
     button: {
       backgroundColor: "#AD4596",

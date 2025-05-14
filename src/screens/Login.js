@@ -24,7 +24,6 @@ export default function Login() {
 
   async function saveToken(token) {
     await SecureStore.setItemAsync("token", token);
-    console.log(token);
   }
 
   async function handleLogin() {
@@ -90,11 +89,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   input: {
-    width: "100%",
+    width: "80%",
     borderBottomWidth: 1,
     paddingRight: 10,
     alignItems: "center",
-    flexDirection: 'row'
+    flexDirection: 'row',
+    margin: 20,
   },
   button: {
     backgroundColor: "#AD4596",
@@ -112,5 +112,7 @@ const styles = StyleSheet.create({
 passwordInput:{
     flex:1,
     height:'40',
+    width: '80%',
+    margin: 10,
 },
 });

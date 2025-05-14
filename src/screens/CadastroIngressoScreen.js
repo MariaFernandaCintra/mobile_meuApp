@@ -77,11 +77,12 @@ export default function Ingresso({ navigation }) {
       fontWeight: "bold",
     },
     input: {
-      width: "100%",
+      width: "80%",
       height: 40,
       borderBottomWidth: 1,
       marginBottom: 20,
       paddingHorizontal: 10,
+      margin: 10,
     },
     button: {
       backgroundColor: "#AD4596",

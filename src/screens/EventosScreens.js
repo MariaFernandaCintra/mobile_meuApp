@@ -11,6 +11,8 @@ import {
   TextInput,
   Alert,
 } from "react-native";
+import * as SecureStore from "expo-secure-store";
+import { useNavigation } from "@react-navigation/native";
 
 export default function EventosScreens() {
   const [eventos, setEventos] = useState([]);
@@ -47,7 +49,7 @@ export default function EventosScreens() {
 
   useEffect(() => {
     getEventos();
-  });
+  }, []);
 
   async function getEventos() {
     try {
@@ -71,6 +73,7 @@ export default function EventosScreens() {
     }
   }
 
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Eventos Disponíveis</Text>
@@ -87,7 +90,7 @@ export default function EventosScreens() {
             >
               <Text style={styles.eventName}>{item.nome}</Text>
               <Text>{item.local}</Text>
-              <Text>{new Date(item.data_hora).toLocaleString}</Text>
+              <Text>{new Date(item.data_hora).toLocaleString()}</Text>
             </TouchableOpacity>
           )}
         />

@@ -14,13 +14,14 @@ import api from "../axios/axios";
 export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
-    <View style={styles.header}>
        <Button
+       style={styles.button}
        title="Cadastrar Evento"
        onPress={() => navigation.navigate("Evento")}
        />
 
        <Button
+       style={styles.button}
        title="Cadastrar Ingresso"
        onPress={() => navigation.navigate("Ingresso")}
        />
@@ -36,20 +37,18 @@ export default function Home({ navigation }) {
         onPress={() => navigation.navigate("EventosScreen")}
        />
     </View>
-    </View>
   )
 }
 
 const styles = StyleSheet.create({
-header:{
 
-},
 container:{
   flex: 1,
   backgroundColor: "#E69EC3",
 },
 button: {
-backgroundColor: "#AD4596",
+marginTop: 20,
+backgroundColor: "pink",
 alignContent: "center",
 },
 });
